@@ -48,7 +48,7 @@ init 是流程起点，无上游产物。入参可选：
 
 1. **读项目现状**：检查仓库根是否已有 `src/` `tests/` `package.json` 等，判断技术栈。本 skill 技术栈通用，不预设具体框架。
 2. **确认目录布局**：向用户说明 `develop/` 只放流程产物，代码留仓库根。按 references/目录布局.md 创建骨架。
-3. **生成 project-context.md**：用 references/项目上下文模板.md，逐章访谈或填空。8 章必须齐全，不可留空章（无内容写「待定」并列入待澄清）。
+3. **生成 project-context.md**：用 references/项目上下文模板.md，逐章访谈或填空。8 章必须齐全，不可留空章（无内容写「待定」并列入待澄清）。第 5 章编码规范按栈取用：据第 2 章技术栈，Java 后端参考 `编码规范模板-后端.md`、React/Vue+TS 前端参考 `编码规范模板-前端.md`，不存在的栈（如 Python）不套模板、按项目自身约定。
 4. **写 CLAUDE.md 引用**（关键）：在仓库根 `CLAUDE.md` 中加入对 `develop/project-context.md` 的引用与「必须遵循」说明，使该文件被加载进 Claude 上下文。已有 CLAUDE.md 则增量追加（不覆盖既有内容）。片段见 references/CLAUDE.md引用片段模板.md。
 5. **落地代码骨架**：把通用骨架拷到仓库根，不进 `develop/`。
 6. **落地工程配置**：lint/format/CI，保证后续 TDD 与 review 有自动化质量基线。
@@ -68,7 +68,9 @@ init 是流程起点，无上游产物。入参可选：
 ## 参考
 
 - `references/目录布局.md` — 目录布局
-- `references/项目上下文模板.md` — 8 章节上下文模板
+- `references/项目上下文模板.md` — 8 章节上下文模板（第 5 章编码规范按栈取用，指向下列两模板）
+- `references/编码规范模板-后端.md` — 后端编码规范模板（以 Java 为主，字段骨架 + 关键范例；非 Java 栈不套用）
+- `references/编码规范模板-前端.md` — 前端编码规范模板（以 React/Vue/TypeScript 为主，字段骨架 + 关键范例；非该栈不套用）
 - `references/CLAUDE.md引用片段模板.md` — CLAUDE.md 引用片段模板（让 context 进上下文）
 - `references/代码骨架模板.md` — 通用代码骨架
 - `references/工程配置模板.md` — 工程配置模板
